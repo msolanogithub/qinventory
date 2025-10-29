@@ -75,9 +75,9 @@
                     outlined autofocus
                     @keyup.enter="() => {
                       const value = Number(scope.value)
+                      scope.value = value;
                       if(!value || !Number.isInteger(value) || value < 0) scope.value = 0;
                       if(this.action == 'remove' && scope.value > props.value) scope.value = props.value;
-                      scope.value = value;
                       scope.set()
                       setTotalToRow(props.row, props.rowIndex)
                     }"
